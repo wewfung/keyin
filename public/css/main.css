@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', monospace;
+    font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
 
@@ -8,8 +8,14 @@ header {
 
 }
 
+.key {
+    height: 200px;
+    padding-bottom: 18px;
+}
+
 h1 {
-    font-weight: normal;
+    color: #333;
+    font-weight: 700;
 }
 
 .parameters {
