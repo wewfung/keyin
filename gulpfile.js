@@ -14,6 +14,7 @@ gulp.task("build-js", function() {
 });
 
 gulp.task("watch", function() {
+    gulp.watch("public/*.html", ["reload"]);
     gulp.watch("public/css/*.css", ["reload"]);
     gulp.watch("public/**/*.js", ["build-js"]);
 });
