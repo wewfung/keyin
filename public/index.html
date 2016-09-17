@@ -3,26 +3,34 @@
     <head>
         <meta charset="utf-8">
         <title>HTN</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     </head>
     <body>
 
+        <section class="searchSection">
+            <header>
+                <h1> Key In </h1>
+                <h4> Open Data Exploration</h4>
+            </header>
 
-        <h1> Open Data Visualizer </h1>
+            <div class="search-box">
+                <input type="text" name="search-string" id="searchString">
+                <button id="searchButton" type="search-button">Search</button>
+            </div>
 
-
-        <input type="text" name="search-string" id="searchString">
-
-        <button id="searchButton" type="search-button">Search</button>
-
+        </section>
 
         <select id="datasetSelect">
     	</select>
 
-        <div class="parameters">
-          <h2> Parameters </h2>
 
+
+        <div class="parameters">
+          <h4>Parameters</h4>
         </div>
 
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
