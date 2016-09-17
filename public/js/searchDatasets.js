@@ -12,16 +12,12 @@ function getAttributeList(dataset){
 	return listTempAttributes;
 }
 
-/*function onResultClick(){
-	$("#s1").text(resultData.desc);
-
-	getDataSetById(resultData.id, resultData.version)
+function onResultClick(element){
+	getDataSetById($(element).attr("data-id"), $(element).attr("data-version"))
 	.then((dataset)=>{
-
 		updateParams(getAttributeList(dataset));
-
 	});
-}*/
+}
 
 export function searchButtonClicked() {
     var strSearch = $("#searchString").val();
@@ -36,10 +32,12 @@ export function searchButtonClicked() {
     		if(resultInfo === false)
     			continue;
 
-    		ul.append($('<li class="search-item" data-id=' + resultInfo.id + 
+    		var li = $('<li class="search-item" data-id=' + resultInfo.id + 
     			' data-version=' + resultInfo.version + 
-    			'><h4 id="s1" class="search-item-name">' + 
-    			resultInfo.desc + '</h4></li>'));
+    			'><h4 class="search-item-name">' + 
+    			resultInfo.desc + '</h4></li>');
+    		li.click(function() {onResultClick(this);});
+    		ul.append(li);
     	}
     });
 }
