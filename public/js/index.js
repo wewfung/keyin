@@ -1,6 +1,5 @@
 // Importing Single Functions
-import {getDataSetById, searchForDataSets} from "./getdatasets.js";
-import {setupHtml} from "./params.js";
+//import {getDataSetById, searchForDataSets, getInfoFromSearchResult} from "./getdatasets.js";
 import {searchButtonClicked} from "./searchDatasets.js";
 
 // Importing Classes
@@ -8,7 +7,6 @@ import Graph from './lib/graph';
 
 var activeData = [];
 
-setupHtml();
 
 // searchForDataSets().then(data => console.log(data)).catch(err => console.log(err));
 // searchForDataSets('').then(data => console.log(data)).catch(err => console.log(err));

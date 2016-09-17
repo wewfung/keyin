@@ -31,3 +31,19 @@ export function searchForDataSets(searchString) {
 	});
 }
 
+
+export function getInfoFromSearchResult(result){
+	
+	var versionArray = result.versions;
+	var title = result.data_set_metas[0].title;
+	var source = result.source.label;
+
+	var obj = {
+		id:  result.id,
+		version: versionArray[versionArray.length - 1].identifier.substring(3),
+		desc: source + ": " + title
+	};
+	return obj;
+
+	
+}
