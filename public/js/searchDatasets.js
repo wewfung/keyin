@@ -1,6 +1,6 @@
 export function searchButtonClicked() {
-    var strSearch = $("#searchString").value;
+    var strSearch = $("#searchString").val();
 
     console.log(strSearch);
-    
+
 }
