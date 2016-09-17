@@ -27,7 +27,7 @@ app.get('/getdataset/:id', function(request, response) {
 /*returns an array of json data sets (max size 10, the namara api doesnt seem to allow any larger per page)
   that match the query string*/
 app.post('/searchfordatasets', function(request, response) {
-	getopendata.searchForDataSets(request.body.query, request.query.page)
+	getopendata.searchForDataSets('toronto ' + request.body.query, request.query.page)
 	.then(data => response.json(data))
 	.catch(err => response.json(err));
 });
