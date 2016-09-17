@@ -6,6 +6,8 @@ import {searchButtonClicked} from "./searchDatasets.js";
 // Importing Classes
 import Graph from './lib/graph';
 
+var activeData =
+
 setupHtml();
 
 // searchForDataSets().then(data => console.log(data)).catch(err => console.log(err));
