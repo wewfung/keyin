@@ -4,7 +4,7 @@
   "description": "Hack for Hack the North 2016",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/wewfung/HTN2016/issues"
   },
-  "homepage": "https://github.com/wewfung/HTN2016"
+  "homepage": "https://github.com/wewfung/HTN2016",
+  "devDependencies": {
+    "babel-core": "^6.14.0"
+  }
 }
