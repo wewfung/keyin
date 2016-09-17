@@ -1,3 +1,5 @@
+'use strict';
+
 var http = require('http');
 
 var API_KEY = '1080c0975afedcb255a2d6425d4fd354f70bd46aca283e9906bd5d871b1dc17e'
