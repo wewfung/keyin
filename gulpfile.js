@@ -3,7 +3,6 @@ var gulp = require("gulp");
 var babel = require("gulp-babel");
 var fs = require('fs');
 var browserify = require('browserify');
-var watchify = require('watchify');
 var babelify = require('babelify');
 
 gulp.task("build-js", function() {
