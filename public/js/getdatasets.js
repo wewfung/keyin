@@ -15,9 +15,9 @@ export function  getDataSetById(id, version) {
 }
 
 
-export function searchForDataSets(searchString) {
+export function searchForDataSets(searchString, page=1) {
 	return new Promise(function(resolve, reject) {
-		var url = '/searchfordatasets';
+		var url = '/searchfordatasets?page=' + page;
 		var request = new XMLHttpRequest();
 		request.open('POST', url, true);
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

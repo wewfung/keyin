@@ -18,11 +18,12 @@ exports.getDataSet = function(id, version) {
 }
 
 
-exports.searchForDataSets = function(query) {
+exports.searchForDataSets = function(query, page) {
+	page = page || 1;
 	return new Promise(function(resolve, reject) {
 		let url = 'http://api.namara.io/v0/data_sets?' +
 			(query ? 'search[query]=' + query + '&' : '') +
-			'search[page]=1&search[order]=relevance&search[limit]=10';
+			'search[page]=' + page + '&search[order]=relevance&search[limit]=10';
 		http.get(url, response => {
 			let dataStr = "";
 			response.on('data', data => dataStr += data);
