@@ -1,13 +1,18 @@
 var gulp = require("gulp");
-var sourcemaps = require("gulp-sourcemaps");
-var babel = require("gulp-babel");
-var concat = require("gulp-concat");
 
-gulp.task("default", function () {
-  return gulp.src("public/**/*.js")
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(concat("all.js"))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("public/dist"));
+var babel = require("gulp-babel");
+var fs = require('fs');
+var browserify = require('browserify');
+var watchify = require('watchify');
+var babelify = require('babelify');
+
+gulp.task("build-js", function() {
+    browserify(["./public/js/index.js"])
+      .transform("babelify", {presets: ["es2015"]})
+      .bundle()
+      .pipe(fs.createWriteStream("./public/js/bundle.js"));
+});
+
+gulp.task("watch", function() {
+    gulp.watch("public/**/*.js", ["build-js"]);
 });

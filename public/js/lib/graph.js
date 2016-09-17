@@ -1,10 +1,7 @@
 export default class Graph {
 
-    contructor (args) {
-
+	constructor (args) {
+        console.log("graph class loaded");
     }
 
-    test () {
-        console.log("cat");
-    }
 }

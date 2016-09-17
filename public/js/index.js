@@ -1,6 +1,10 @@
-import Graph from "./lib/graph.js";
+// Importing Single Functions
+import {shit, otherShit} from "./lib/shit";
 
+// Importing Classes
+import Graph from './lib/graph';
 
-const graph = new Graph();
+shit();
+otherShit();
 
-graph.test();
+const graph = new Graph({height: 10});
