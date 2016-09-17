@@ -2,6 +2,7 @@
 import {shit, otherShit} from "./lib/shit";
 import {getDataSetById, searchForDataSets} from "./getdatasets.js";
 import {setupHtml} from "./main.js";
+import {searchButtonClicked} from "./searchDatasets.js";
 
 // Importing Classes
 import Graph from './lib/graph';
