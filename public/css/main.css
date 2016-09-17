@@ -9,7 +9,7 @@ header {
 }
 
 .key {
-    height: 125px;
+    height: 100px;
     padding-bottom: 48px;
 }
 
@@ -29,7 +29,38 @@ h1 {
     background-color: white;
 }
 
+.search-box {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+}
 
+#searchString, #searchButton {
+    height: 50px;
+}
+
+
+#searchString {
+    border: none;
+    box-shadow: inset 0 2px 13px -4px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #eee;
+    width: 60%;
+    max-width: 350px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+}
+
+#searchButton {
+    border-color: #eee;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+}
+
+#searchButton:hover {
+    background-color: #fafafa;
+}
 
 .parameters {
 
