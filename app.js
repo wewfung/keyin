@@ -17,7 +17,7 @@ app.listen(3000, function() {
 
 /*returns an array of json objects containing the columns of the dataset*/
 app.get('/getdataset/:id', function(request, response) {
-	getopendata.getDataSet(request.params.id)
+	getopendata.getDataSet(request.params.id, request.query.version)
 	.then(data => response.json(data))
 	.catch(err => {
 		response.json(err);
