@@ -57,6 +57,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _shit.otherShit)();
 
+(0, _getdatasets.searchForDataSets)().then(function (data) {
+  return console.log(data);
+}).catch(function (err) {
+  return console.log(err);
+});
+(0, _getdatasets.searchForDataSets)('').then(function (data) {
+  return console.log(data);
+}).catch(function (err) {
+  return console.log(err);
+});
+(0, _getdatasets.getDataSetById)('4d4418ca-ce52-465c-8a84-f11260c7da92', 1).then(function (data) {
+  return console.log('data' + data);
+});
+
 var graph = new _graph2.default({ height: 10 });
 
 },{"./getdatasets.js":1,"./lib/graph":3,"./lib/shit":4}],3:[function(require,module,exports){
