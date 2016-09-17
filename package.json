@@ -22,7 +22,8 @@
   "author": "William Fung, Eric Stevenson, Michael Song, Hunter Caron",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+	"body-parser": "1.15"
   },
   "bugs": {
     "url": "https://github.com/wewfung/HTN2016/issues"
