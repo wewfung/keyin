@@ -1,12 +1,14 @@
 // Importing Single Functions
 import {shit, otherShit} from "./lib/shit";
 import {getDataSetById, searchForDataSets} from "./getdatasets.js";
+import {setupHtml} from "./main.js";
 
 // Importing Classes
 import Graph from './lib/graph';
 
 shit();
 otherShit();
+setupHtml();
 
 // searchForDataSets().then(data => console.log(data)).catch(err => console.log(err));
 // searchForDataSets('').then(data => console.log(data)).catch(err => console.log(err));
