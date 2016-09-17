@@ -1,0 +1,31 @@
+{
+  "name": "htn2016",
+  "version": "0.0.1",
+  "description": "Hack for Hack the North 2016",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wewfung/HTN2016.git"
+  },
+  "keywords": [
+    "hack",
+    "north",
+    "2016",
+    "data",
+    "vis",
+    "open",
+    "data"
+  ],
+  "author": "William Fung, Eric Stevenson, Michael Song, Hunter Caron",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "bugs": {
+    "url": "https://github.com/wewfung/HTN2016/issues"
+  },
+  "homepage": "https://github.com/wewfung/HTN2016"
+}
