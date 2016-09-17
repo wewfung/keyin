@@ -14,9 +14,11 @@ gulp.task("build-js", function() {
 });
 
 gulp.task("watch", function() {
+    gulp.watch("public/**/*.js", ["build-js"]);
+
     gulp.watch("public/*.html", ["reload"]);
     gulp.watch("public/css/*.css", ["reload"]);
-    gulp.watch("public/**/*.js", ["build-js"]);
+    gulp.watch("public/js/bundle.js", ["reload"]);
 });
 
 gulp.task('browser-sync', function() {
