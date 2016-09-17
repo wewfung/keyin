@@ -14,6 +14,7 @@ gulp.task("build-js", function() {
 });
 
 gulp.task("watch", function() {
+    gulp.watch("public/css/*.css", ["reload"]);
     gulp.watch("public/**/*.js", ["build-js"]);
 });
 
@@ -21,4 +22,8 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         proxy: "localhost:3000"
     });
+});
+
+gulp.task("reload", function() {
+    browserSync.reload();
 });
