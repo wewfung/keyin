@@ -18,3 +18,4 @@ const graph = new Graph({height: 10});
 $("#searchButton").click(function() {
     searchButtonClicked();
 })
+
