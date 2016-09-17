@@ -13,5 +13,6 @@ gulp.task("build-js", function() {
 });
 
 gulp.task("watch", function() {
+    
     gulp.watch("public/**/*.js", ["build-js"]);
 });
