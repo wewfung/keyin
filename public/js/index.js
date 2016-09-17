@@ -6,7 +6,7 @@ import {searchButtonClicked} from "./searchDatasets.js";
 // Importing Classes
 import Graph from './lib/graph';
 
-var activeData =
+var activeData = [];
 
 setupHtml();
 
