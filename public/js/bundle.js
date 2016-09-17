@@ -84,7 +84,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.shit = shit;
 exports.otherShit = otherShit;
+var cat = "cat";
+
+function cow() {
+    console.log("cow");
+    console.log(cat);
+}
+
 function shit() {
+    cow();
     console.log("shit");
 }
 
