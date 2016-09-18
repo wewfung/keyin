@@ -32,7 +32,7 @@ export function searchButtonClicked() {
     		if(resultInfo === false)
     			continue;
 
-    		var li = $('<li class="search-item eleven columns " data-id=' + resultInfo.id +
+    		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
     			' data-version=' + resultInfo.version +
     			'><h4 class="search-item-name">' +
     			resultInfo.desc + '</h4></li>');
