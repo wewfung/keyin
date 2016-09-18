@@ -1,9 +1,11 @@
+import {makeGraph} from './graphs.js';
+
 var parameterList = ['X', 'Y', 'Value'];  // Determines # of selects made
 
 function addParameter(nameParam, elementParent, attributeList){
 	elementParent.append($('<label>' + nameParam + '</label>'));
 
-	var select = $('<select></select>');
+	var select = $('<select id="htn' + nameParam + '"></select>');
 	select.on('change', function() {onParamChange(nameParam, this.value);})
 	elementParent.append(select);
 
@@ -28,4 +30,5 @@ export function updateParams(attributeList){
 function onParamChange(param, value){
 	console.log(param);
 	console.log(value);
+	makeGraph();
 }

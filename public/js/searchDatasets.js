@@ -51,6 +51,7 @@ function onResultClick(element){
 
 	getDataSetById($(element).attr("data-id"), $(element).attr("data-version"))
 	.then((dataset)=>{
+		window.globalDataSet = JSON.parse(dataset);
 		updateParams(getAttributeList(dataset));
 	});
 

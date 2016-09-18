@@ -26,3 +26,5 @@ $("#previousButton").click(() => {
 $("#nextButton").click(() => {
 	searchOtherPage(1);
 });
+
+window.globalDataSet = [];
