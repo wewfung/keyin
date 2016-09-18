@@ -1,6 +1,6 @@
 // Importing Single Functions
 //import {getDataSetById, searchForDataSets, getInfoFromSearchResult} from "./getdatasets.js";
-import {searchButtonClicked} from "./searchDatasets.js";
+import {searchButtonClicked, searchOtherPage} from "./searchDatasets.js";
 
 // Importing Classes
 import Graph from './lib/graph';
@@ -19,3 +19,10 @@ $("#searchButton").click(function() {
     searchButtonClicked();
 })
 
+$("#previousButton").click(() => {
+	searchOtherPage(-1);
+});
+
+$("#nextButton").click(() => {
+	searchOtherPage(1);
+});
