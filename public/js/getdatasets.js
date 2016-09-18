@@ -35,8 +35,6 @@ export function searchForDataSets(searchString, page=1) {
 export function getInfoFromSearchResult(result){
 	
 	var versionArray = result.versions;
-	var title = result.data_set_metas[0].title;
-	var source = result.source.label;
 
 	if(versionArray.length - 1 < 0)
 		return false;
@@ -44,7 +42,8 @@ export function getInfoFromSearchResult(result){
 	var obj = {
 		id:  result.id,
 		version: versionArray[versionArray.length - 1].identifier.substring(3),
-		desc: source + ": " + title
+		source: result.source.label,
+		title: result.data_set_metas[0].title
 	};
 	return obj;
 

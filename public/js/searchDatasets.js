@@ -34,8 +34,8 @@ export function searchButtonClicked() {
 
     		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
     			' data-version=' + resultInfo.version +
-    			'><h4 class="search-item-name">' +
-    			resultInfo.desc + '</h4></li>');
+    			'><p class="source">' + resultInfo.source +
+    			'</p><h4 class="search-item-name">' + resultInfo.title + '</h4></li>');
 			li.css('-webkit-animation-delay', (resultInd/30 + "s"));
     		li.click(function() {onResultClick(this);});
     		ul.append(li);
