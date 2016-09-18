@@ -15,26 +15,27 @@ function getAttributeList(dataset){
 }
 
 $("#key-svg").click(function() {
-	console.log("shit");
 	animateHeader(!headerBig);
 });
 
-function animateHeader(state){
-	if (state) {
+function animateHeader(show){
+	if (show) {
 		headerBig = true;
-		$("header").children().show('460');
+		$("header").children().show('440');
 		$("#key-svg").css({transform: "translateX(calc(50vw - 27px)) translateY(40px) rotate(0deg) scale(1)"});
 	} else {
 		headerBig = false;
-		$("header").children().hide('460');
+		$("header").children().hide('440');
 		$("#key-svg").css({transform: "translateX(34px) translateY(-27px) rotate(-90deg) scale(0.55)"});
 	}
 }
 
-function populateTitle(title, true)	{
-	if (true) {
+function populateTitle(title, show)	{
+	if (show) {
 		$("#dataset-title").text(() => title);
-		$("#dataset-title").css({transform: "translateY(0px)"});
+		$(".dataset-title").css({transform: "translateY(0px)"});
+	} else {
+		$(".dataset-title").css({transform: "translateY(-100px)"});
 	}
 }
 
@@ -46,7 +47,7 @@ function onResultClick(element){
 
 	animateHeader(false);
 
-	populateTitle($(element).attr("data-title"))
+	populateTitle($(element).attr("data-title"), true)
 
 	getDataSetById($(element).attr("data-id"), $(element).attr("data-version"))
 	.then((dataset)=>{

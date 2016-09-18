@@ -1,7 +1,7 @@
 var parameterList = ['X', 'Y', 'Value'];  // Determines # of selects made
 
 function addParameter(nameParam, elementParent, attributeList){
-	elementParent.append($('<h3>' + nameParam + '</h3>'));
+	elementParent.append($('<label>' + nameParam + '</label>'));
 
 	var select = $('<select></select>');
 	select.on('change', function() {onParamChange(nameParam, this.value);})
@@ -18,7 +18,8 @@ function addParameter(nameParam, elementParent, attributeList){
 export function updateParams(attributeList){
 	var divParam = $('.parameters');
 	divParam.empty();
-	divParam.append($('<h3> Parameters </h3>'));
+	divParam.css({opacity: "1"});
+	divParam.append($('<h3 class="param-title"> Parameters </h3>'));
 	for (var param in parameterList){
 		addParameter(parameterList[param], divParam, attributeList);
 	}
