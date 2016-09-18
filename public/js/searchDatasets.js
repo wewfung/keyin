@@ -1,6 +1,8 @@
 import {searchForDataSets, getInfoFromSearchResult, getDataSetById} from "./getdatasets.js";
 import {updateParams} from "./params.js";
 
+var headerBig = true;
+
 function getAttributeList(dataset){
 	var listTempAttributes = [];
 	dataset = JSON.parse(dataset);
@@ -12,14 +14,48 @@ function getAttributeList(dataset){
 	return listTempAttributes;
 }
 
+$("#key-svg").click(function() {
+	console.log("shit");
+	animateHeader(!headerBig);
+});
+
+function animateHeader(state){
+	if (state) {
+		headerBig = true;
+		$("header").children().show('460');
+		$("#key-svg").css({transform: "translateX(calc(50vw - 27px)) translateY(40px) rotate(0deg) scale(1)"});
+	} else {
+		headerBig = false;
+		$("header").children().hide('460');
+		$("#key-svg").css({transform: "translateX(34px) translateY(-27px) rotate(-90deg) scale(0.55)"});
+	}
+}
+
+function populateTitle(title, true)	{
+	if (true) {
+		$("#dataset-title").text(() => title);
+		$("#dataset-title").css({transform: "translateY(0px)"});
+	}
+}
+
+
 function onResultClick(element){
+	var list = $('.listSection');
+
+	list.hide(function(){ this.remove(); });
+
+	animateHeader(false);
+
+	populateTitle($(element).attr("data-title"))
+
 	getDataSetById($(element).attr("data-id"), $(element).attr("data-version"))
 	.then((dataset)=>{
 		updateParams(getAttributeList(dataset));
 	});
+
 }
 function populateSearchResults(results) {
-   	var ul = $('#search-list');
+	var ul = $('#search-list');
    	ul.empty();
    	for(var resultInd in results){
    		var resultInfo = getInfoFromSearchResult(results[resultInd]);
@@ -29,7 +65,8 @@ function populateSearchResults(results) {
 
    		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
    			' data-version=' + resultInfo.version +
-   			'><p class="source">' + resultInfo.source +
+   			' data-title="' + resultInfo.title +
+			'"><p class="source">' + resultInfo.source +
    			'</p><h4 class="search-item-name">' + resultInfo.title + '</h4></li>');
    		li.css('-webkit-animation-delay', (resultInd/30 + "s"));
    		li.click(function() {onResultClick(this);});
@@ -40,12 +77,12 @@ function populateSearchResults(results) {
 export function searchButtonClicked() {
     var strSearch = $("#searchString").val();
 	$("#searchButton").attr({'data-page': 1, 'data-string': strSearch});
-	$("#nextButton").attr('hidden', false);
-	$("#previousButton").attr('hidden', false);
 
     searchForDataSets(strSearch)
     .then((results)=>{
 		populateSearchResults(results);
+		$("#nextButton").attr('hidden', false);
+		$("#previousButton").attr('hidden', false);
     });
 }
 

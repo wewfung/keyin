@@ -2,25 +2,39 @@ body {
     font-family: 'Roboto Mono', sans-serif;
     text-align: center;
     background-color: #fafafa;
+    margin-bottom: 100px;
 }
 
 header {
-    padding-top: 70px
+    padding-top: 14px;
+    overflow: auto;
 }
 
 svg {
+    left: 0;
+    position: absolute;
+    transform: translateX(calc(50vw - 27px)) translateY(40px) ;
     height: 100px;
     padding-bottom: 48px;
+
+    transition: all 0.46s cubic-bezier(.02, .01, .47, 1);
+    -moz-transition: all 0.46s cubic-bezier(.02, .01, .47, 1);
 }
 
 svg:hover > #key {
-    /*fill: #F8DA1B;*/
-    opacity: 0.8;
+    fill: rgba(249, 219, 27, 0.2);
+    opacity: 0.7;
+}
+
+#key {
+    transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
 }
 
 
 
 h1 {
+    margin-top: 170px;
     color: #333;
     font-size: 32px;
     font-weight: 700;
@@ -33,7 +47,9 @@ h1 {
 }
 
 .searchSection {
+    position: relative;
     background-color: white;
+    z-index: 2;
 }
 
 .search-box {
@@ -45,7 +61,6 @@ h1 {
 #searchString, #searchButton {
     height: 50px;
 }
-
 
 #searchString {
     border: none;
@@ -103,6 +118,8 @@ h1 {
     margin-bottom: 2px;
     margin-top: 8px;
     font-weight: 400;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
 
 .search-item {
@@ -116,11 +133,11 @@ h1 {
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
     -webkit-animation-fill-mode:forwards;
-    -webkit-animation-duration:1s;
+    -webkit-animation-duration:0.6s;
 
     -moz-animation:fadeIn ease-in 1;
     -moz-animation-fill-mode:forwards;
-    -moz-animation-duration:1s;
+    -moz-animation-duration:0.6s;
 
     background-color: white;
     box-shadow: 0 1px 8px -2px rgba(0, 0, 0, 0.12);
@@ -131,7 +148,7 @@ h1 {
 }
 
 .search-item:hover {
-    background-color: #fefefe;
+    background-color: #fcfcfc;
     transition: all 0.3s ease-out;
     transform: translateY(-2px) scale(1.03);
     -moz-transition: all 0.3s ease-out;
@@ -140,13 +157,25 @@ h1 {
     -moz-box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
 }
 
+.search-item:hover > .search-item-name {
+    transform: scale(1.1) translateY(-6px);
+}
+
+.search-item:hover > .source {
+    transform: scale(0.6) translateY(6px);
+    opacity: 0;
+}
+
 .search-item:active {
-    transform: translateY(-2px) scale(1.03);
-    -moz-transition: all 0.1s ease-out;
+    transform: translateY(-2px) scale(1.07);
+    -moz-transition: all 0.15s ease-out;
     background-color: #f6f6f6;
 }
 
 .search-item-name {
+    max-width: 90%;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
     color: #333;
     font-weight: 700;
     font-size: 16px;
@@ -154,6 +183,18 @@ h1 {
 
 .pagination {
     width: 100%;
+    opacity: 0;
+
+    -webkit-animation:fadeIn ease-in 1;
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration:1s;
+    -webkit-animation-delay:3s;
+    animation-delay:1s;
+
+    -moz-animation:fadeIn ease-in 1;
+    -moz-animation-fill-mode:forwards;
+    -moz-animation-duration:1s;
+    -moz-animation-delay:1s;
 }
 
 .page-button {
@@ -174,4 +215,25 @@ h1 {
     -moz-box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.14);
     -moz-transform: translateY(-2px) scale(1.01);
     transform: translateY(-2px) scale(1.01);
+}
+
+/* Dataset-Title */
+
+.dataset-title {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-100px);
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    color: #ccc;
+    font-weight: 400;
+    margin-top: 6px;
+    padding: 24px 0;
+    background-color: white;
+    font-size: 24px;
+}
+
+.dataset-title span {
+    color: #333;
+    font-weight: 700;
 }
