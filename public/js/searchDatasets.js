@@ -41,8 +41,6 @@ function populateTitle(title, show)	{
 
 
 function onResultClick(element){
-	$("#chartSection").empty();
-
 	var list = $('.listSection');
 
 	list.hide();
@@ -79,6 +77,8 @@ function populateSearchResults(results) {
 }
 
 export function searchButtonClicked() {
+	$("#chartSection").empty();
+	
     var strSearch = $("#searchString").val();
 	$("#searchButton").attr({'data-page': 1, 'data-string': strSearch});
 	animateHeader(true);
