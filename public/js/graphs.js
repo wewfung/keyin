@@ -13,10 +13,10 @@ export function makeGraph() {
 		var colors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 0.2)'); 
 		var borderColors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 1)'); 
 
-		$('#myChart').remove();
-		$('.searchSection').append($('<canvas id="myChart" width="80%" height="60%"></canvas>'));
-		$('#myLineChart').remove();
-		$('.searchSection').append($('<canvas id="myLineChart" width="80%" height="60%"></canvas>'));
+		var divCharts = $('#chartSection');
+		divCharts.empty();
+		divCharts.append($('<canvas id="myChart" width="80%" height="60%"></canvas>'));
+		divCharts.append($('<canvas id="myLineChart" width="80%" height="60%"></canvas>'));
 		var ctx = document.getElementById("myChart");
 		var myChart = new Chart(ctx, {
 				type: 'bar',

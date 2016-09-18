@@ -1,5 +1,4 @@
 // Importing Single Functions
-//import {getDataSetById, searchForDataSets, getInfoFromSearchResult} from "./getdatasets.js";
 import {searchButtonClicked, searchOtherPage} from "./searchDatasets.js";
 
 // Importing Classes

@@ -7,6 +7,7 @@ function addParameter(nameParam, elementParent, attributeList){
 
 	var select = $('<select id="htn' + nameParam + '"></select>');
 	select.on('change', function() {onParamChange(nameParam, this.value);})
+	select.append("<option></option>");
 	elementParent.append(select);
 
 	$.each(attributeList, function(index, value){
@@ -15,6 +16,7 @@ function addParameter(nameParam, elementParent, attributeList){
 			.text(value)
 			.on('change', function() {onParamChange(value);}))
 	});
+
 }
 
 export function updateParams(attributeList){
