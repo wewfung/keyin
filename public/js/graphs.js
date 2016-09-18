@@ -23,8 +23,8 @@ export function makeGraph() {
 
 	if(keyValue === ""){
 
-		divCharts.append($('<canvas id="myChart" width="600" height="400"></canvas>'));
-		divCharts.append($('<canvas id="myLineChart" width="600" height="400"></canvas>'));
+		divCharts.append($('<canvas id="myChart" width="1000" height="500"></canvas>'));
+		divCharts.append($('<canvas id="myLineChart" width="1000" height="500"></canvas>'));
 		var ctx = document.getElementById("myChart");
 		var myChart = new Chart(ctx, {
 			type: 'bar',

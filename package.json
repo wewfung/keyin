@@ -4,7 +4,8 @@
   "description": "Hack for Hack the North 2016",
   "main": "app.js",
   "scripts": {
-    "start": "gulp watch build-js & node app.js "
+    "start": "node app.js ",
+    "postinstall": "gulp build-js"
   },
   "repository": {
     "type": "git",

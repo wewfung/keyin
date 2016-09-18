@@ -10,7 +10,7 @@ var getopendata = require('./server/getopendata.js');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Farting on port 3000");
 });
 
