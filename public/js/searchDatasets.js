@@ -43,7 +43,7 @@ function populateTitle(title, show)	{
 function onResultClick(element){
 	var list = $('.listSection');
 
-	list.hide(function(){ this.remove(); });
+	list.hide();
 
 	animateHeader(false);
 
@@ -79,12 +79,17 @@ function populateSearchResults(results) {
 export function searchButtonClicked() {
     var strSearch = $("#searchString").val();
 	$("#searchButton").attr({'data-page': 1, 'data-string': strSearch});
+	animateHeader(true);
+	populateTitle("", false);
+	$('.parameters').css({opacity: "0"});
+
 
     searchForDataSets(strSearch)
     .then((results)=>{
 		populateSearchResults(results);
 		$("#nextButton").attr('hidden', false);
 		$("#previousButton").attr('hidden', false);
+		$('.listSection').show();
     });
 }
 
