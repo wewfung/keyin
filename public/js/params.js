@@ -4,12 +4,14 @@ function addParameter(nameParam, elementParent, attributeList){
 	elementParent.append($('<h3>' + nameParam + '</h3>'));
 
 	var select = $('<select></select>');
+	select.on('change', function() {onParamChange(nameParam, this.value);})
 	elementParent.append(select);
-
+	
 	$.each(attributeList, function(index, value){
-	select.append($("<option></option>")
-		.attr("value", value)
-		.text(value));
+		select.append($("<option></option>")
+			.attr("value", value)
+			.text(value)
+			.on('change', function() {onParamChange(value);}))
 	});
 }
 
@@ -20,4 +22,9 @@ export function updateParams(attributeList){
 	for (var param in parameterList){
 		addParameter(parameterList[param], divParam, attributeList);
 	}
+}
+
+function onParamChange(param, value){
+	console.log(param);
+	console.log(value);
 }
