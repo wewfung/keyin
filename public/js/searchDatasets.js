@@ -18,6 +18,24 @@ function onResultClick(element){
 		updateParams(getAttributeList(dataset));
 	});
 }
+function populateSearchResults(results) {
+   	var ul = $('#search-list');
+   	ul.empty();
+   	for(var resultInd in results){
+   		var resultInfo = getInfoFromSearchResult(results[resultInd]);
+
+   		if(resultInfo === false)
+   			continue;
+
+   		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
+   			' data-version=' + resultInfo.version +
+   			'><p class="source">' + resultInfo.source +
+   			'</p><h4 class="search-item-name">' + resultInfo.title + '</h4></li>');
+   		li.css('-webkit-animation-delay', (resultInd/30 + "s"));
+   		li.click(function() {onResultClick(this);});
+   		ul.append(li);
+   	}
+}
 
 export function searchButtonClicked() {
     var strSearch = $("#searchString").val();
@@ -27,22 +45,7 @@ export function searchButtonClicked() {
 
     searchForDataSets(strSearch)
     .then((results)=>{
-    	var ul = $('#search-list');
-    	ul.empty();
-    	for(var resultInd in results){
-    		var resultInfo = getInfoFromSearchResult(results[resultInd]);
-
-    		if(resultInfo === false)
-    			continue;
-
-    		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
-    			' data-version=' + resultInfo.version +
-    			'><p class="source">' + resultInfo.source +
-    			'</p><h4 class="search-item-name">' + resultInfo.title + '</h4></li>');
-			li.css('-webkit-animation-delay', (resultInd/30 + "s"));
-    		li.click(function() {onResultClick(this);});
-    		ul.append(li);
-    	}
+		populateSearchResults(results);
     });
 }
 
@@ -59,21 +62,6 @@ export function searchOtherPage(pageAmt) {
     searchForDataSets(searchBtn.attr('data-string'), +page + +pageAmt)
     .then((results)=>{
 		searchBtn.attr('data-page', +page + +pageAmt)
-    	var ul = $('#search-list');
-    	ul.empty();
-    	for(var resultInd in results){
-    		var resultInfo = getInfoFromSearchResult(results[resultInd]);
-
-    		if(resultInfo === false)
-    			continue;
-
-    		var li = $('<li class="search-item twelve columns " data-id=' + resultInfo.id +
-    			' data-version=' + resultInfo.version +
-    			'><h4 class="search-item-name">' +
-    			resultInfo.desc + '</h4></li>');
-			li.css('-webkit-animation-delay', (resultInd/30 + "s"));
-    		li.click(function() {onResultClick(this);});
-    		ul.append(li);
-    	}
+		populateSearchResults(results);
     });
 }
