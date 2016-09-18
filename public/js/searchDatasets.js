@@ -28,14 +28,15 @@ export function searchButtonClicked() {
     	ul.empty();
     	for(var resultInd in results){
     		var resultInfo = getInfoFromSearchResult(results[resultInd]);
-    		
+
     		if(resultInfo === false)
     			continue;
 
-    		var li = $('<li class="search-item" data-id=' + resultInfo.id + 
-    			' data-version=' + resultInfo.version + 
-    			'><h4 class="search-item-name">' + 
+    		var li = $('<li class="search-item eleven columns " data-id=' + resultInfo.id +
+    			' data-version=' + resultInfo.version +
+    			'><h4 class="search-item-name">' +
     			resultInfo.desc + '</h4></li>');
+			li.css('-webkit-animation-delay', (resultInd/30 + "s"));
     		li.click(function() {onResultClick(this);});
     		ul.append(li);
     	}
@@ -47,4 +48,3 @@ $("#searchString").keydown(function(event){
         $("#searchButton").click();
     }
 });
-

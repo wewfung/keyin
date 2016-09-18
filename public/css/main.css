@@ -65,3 +65,34 @@ h1 {
 .parameters {
 
 }
+
+
+/* SEARCH STYLES */
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.search-item {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration:1s;
+
+    background-color: white;
+    box-shadow: 0 2px 13px -2px rgba(0, 0, 0, 0.12);
+    list-style: none;
+    transition: all 0.3s ease-out;
+}
+
+.search-item:hover {
+    transition: all 0.3s ease-out;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 13px -2px rgba(0, 0, 0, 0.12);
+}
+
+.search-item-name {
+    height: 60px;
+    font-weight: 700;
+    font-size: 18px;
+}
