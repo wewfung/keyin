@@ -91,8 +91,8 @@ h1 {
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-.search-list {
-
+#search-list {
+    margin: 8px auto;
 }
 
 .source {
@@ -150,4 +150,27 @@ h1 {
     color: #333;
     font-weight: 700;
     font-size: 16px;
+}
+
+.pagination {
+    width: 100%;
+}
+
+.page-button {
+    margin-top: 12px;
+    border-radius: 2px;
+    border: none;
+    background-color: #efefef;
+
+    transition: all 0.3s ease-out;
+
+    -moz-transition: all 0.3s ease-out;
+
+}
+
+.page-button:hover {
+    box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.08);
+    -moz-transform: translateY(-2px) scale(1.01);
+    transform: translateY(-2px) scale(1.01);
 }
