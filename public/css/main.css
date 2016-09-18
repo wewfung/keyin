@@ -10,7 +10,7 @@ header {
     overflow: auto;
 }
 
-svg {
+#key-svg {
     left: 0;
     position: absolute;
     transform: translateX(calc(50vw - 27px)) translateY(40px) ;

@@ -1,3 +1,5 @@
+import {drawD3Graph} from "./graphd3.js"
+
 export function makeGraph() {
 
 	var keyX = $('#htnX').val();
@@ -15,11 +17,12 @@ export function makeGraph() {
 
 	var divCharts = $('#chartSection');
 	divCharts.empty();
-	var colors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 0.2)'); 
-	var borderColors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 1)'); 
+	var colors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 0.2)');
+	var borderColors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 1)');
 
 
 	if(keyValue === ""){
+
 		divCharts.append($('<canvas id="myChart" width="600" height="400"></canvas>'));
 		divCharts.append($('<canvas id="myLineChart" width="600" height="400"></canvas>'));
 		var ctx = document.getElementById("myChart");
@@ -52,13 +55,14 @@ export function makeGraph() {
 					backgroundColor: colors[0],
 					borderColor: borderColors[0],
 					borderWidth: 1
-				}]							
+				}]
 			},
 			options: {
 				responsive: false,
 				maintainAspectRatio: false,
 			}
 		});
+
 
 
 		divCharts.append($('<canvas id="myRadarChart" width="600" height="400"></canvas>'));
@@ -73,7 +77,7 @@ export function makeGraph() {
 					backgroundColor: colors.length > 0 ? colors[1] : colors,
 					borderColor: borderColors.length > 0 ? borderColors[1] : borderColors,
 					borderWidth: 1
-				}]							
+				}]
 			},
 			options: {
 				responsive: true,
@@ -83,7 +87,8 @@ export function makeGraph() {
 		});
 
 	} else{
-		
+
+		drawD3Graph(keyX, keyY, keyValue);
 
 	}
 }
