@@ -21,7 +21,7 @@ export function updateParams(attributeList){
 	var divParam = $('.parameters');
 	divParam.empty();
 	divParam.css({opacity: "1"});
-	divParam.append($('<h3 class="param-title"> Parameters </h3>'));
+	divParam.append($('<h3 class="param-title"> parameters </h3>'));
 	for (var param in parameterList){
 		addParameter(parameterList[param], divParam, attributeList);
 	}
