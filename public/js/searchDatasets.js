@@ -41,6 +41,8 @@ function populateTitle(title, show)	{
 
 
 function onResultClick(element){
+	$("#chartSection").empty();
+
 	var list = $('.listSection');
 
 	list.hide();

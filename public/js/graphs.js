@@ -15,15 +15,13 @@ export function makeGraph() {
 
 	var divCharts = $('#chartSection');
 	divCharts.empty();
+	var colors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 0.2)'); 
+	var borderColors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 1)'); 
+
 
 	if(keyValue === ""){
-		var colors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 0.2)'); 
-		var borderColors = arrY.map(() => 'rgba(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', 1)'); 
-
-		
 		divCharts.append($('<canvas id="myChart" width="600" height="400"></canvas>'));
 		divCharts.append($('<canvas id="myLineChart" width="600" height="400"></canvas>'));
-		var ctx = document.getElementById("myChart");
 		var ctx = document.getElementById("myChart");
 		var myChart = new Chart(ctx, {
 			type: 'bar',
@@ -51,19 +49,41 @@ export function makeGraph() {
 				datasets: [{
 					label: keyY,
 					data: arrY,
-					backgroundColor: colors,
-					borderColor: borderColors,
+					backgroundColor: colors[0],
+					borderColor: borderColors[0],
 					borderWidth: 1
 				}]							
 			},
 			options: {
 				responsive: false,
-				maintainAspectRatio: false
+				maintainAspectRatio: false,
 			}
 		});
+
+
+		divCharts.append($('<canvas id="myRadarChart" width="600" height="400"></canvas>'));
+		var ctrx = document.getElementById("myRadarChart");
+		var myRadarChart = new Chart(ctrx, {
+			type: 'radar',
+			data: {
+				labels: arrValue, //empty values
+				datasets: [{
+					label: keyY,
+					data: arrY,
+					backgroundColor: colors.length > 0 ? colors[1] : colors,
+					borderColor: borderColors.length > 0 ? borderColors[1] : borderColors,
+					borderWidth: 1
+				}]							
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: true,
+				tooltips: {enabled: false}
+			}
+		});
+
 	} else{
-
-
 		
+
 	}
 }
