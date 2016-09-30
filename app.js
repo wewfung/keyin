@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.listen(3000, function() {
-    console.log("Farting on port 3000");
+    console.log("Listening on port 3000");
 });
 
 
